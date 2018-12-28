@@ -7,12 +7,15 @@ import { FooterComponent } from '../share/footer/footer.component';
 import { HomeComponent } from '../home/home.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/core/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
     MaterialModule
   ],
   declarations: [
@@ -27,7 +30,8 @@ import { MaterialModule } from 'src/app/core/material/material.module';
     RegisterComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

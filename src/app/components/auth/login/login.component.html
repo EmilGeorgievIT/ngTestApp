@@ -1,3 +1,35 @@
-<p>
-  login works!
-</p>
+<section class="section-login">
+    <div class="section__body">
+        <form class="form-login" [formGroup]='loginForm'>
+            <div class="form__head">
+                <h3>
+                    Login
+                </h3>
+            </div>
+
+            <div class="form__body">
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput formControlName="email">
+                        <mat-icon matSuffix>alternate_email</mat-icon>
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+                </div>
+
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="email">
+                        <mat-icon matSuffix>lock</mat-icon>
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="form__actions">
+                <button type="submit" mat-raised-button color="primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>

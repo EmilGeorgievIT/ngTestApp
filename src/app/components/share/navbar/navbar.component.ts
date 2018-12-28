@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
+import { MatSidenav } from '@angular/material/sidenav';
+
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -9,13 +11,20 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  @ViewChild('drawer') drawer: MatSidenav;
 
   constructor(private breakpointObserver: BreakpointObserver) { }
-
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
     map(result => result.matches)
   );
+
+  hideMenu(): void {
+    this.drawer.open();
+    setTimeout(() => {
+      this.drawer.close();
+    }, 3000);
+  }
 
 
   ngOnInit() {

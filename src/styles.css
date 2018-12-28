@@ -9,3 +9,18 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+
+/*************************************
+    Container
+**************************************/
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.main {
+    min-height: calc(100vh - 64px + 64px);
+}
