@@ -29,7 +29,6 @@ export class NavbarComponent implements OnInit {
     }, 3000);
   }
   logOut() {
-    console.log('work');
     this.authService.signOut();
   }
 

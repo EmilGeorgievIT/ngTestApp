@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
+import { CarsModule } from './components/cars/cars.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { LayoutModule } from '@angular/cdk/layout';
   imports: [
     BrowserModule,
     SharedModule,
+    CarsModule,
     AppRoutingModule,
     RouterModule,
     BrowserAnimationsModule,
