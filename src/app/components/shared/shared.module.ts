@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/core/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     RouterModule,
+    ToastrModule.forRoot(),
     HttpClientModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     MaterialModule
   ],
