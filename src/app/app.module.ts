@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
 
 
 @NgModule({
@@ -20,8 +18,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     SharedModule,
     AppRoutingModule,
     RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
     LayoutModule,
   ],

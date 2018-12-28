@@ -8,13 +8,15 @@ import { HomeComponent } from '../home/home.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/core/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { AuthService } from '../auth/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MaterialModule
   ],
@@ -32,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     ReactiveFormsModule
-  ]
+  ],
+  providers: [AuthService]
 })
 export class SharedModule { }
