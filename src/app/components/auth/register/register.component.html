@@ -1,3 +1,44 @@
-<p>
-  register works!
-</p>
+<section class="section-register">
+    <div class="section__body">
+        <form class="form" [formGroup]='registerForm' (ngSubmit)="formValue()">
+            <div class="form__head">
+                <h3>
+                    Register
+                </h3>
+            </div>
+
+            <div class="form__body">
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Name</mat-label>
+                        <input type="text" matInput formControlName="name" required>
+                        <mat-icon matSuffix>face</mat-icon>
+                        <mat-error>This fieled is required</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput formControlName="email" required>
+                        <mat-icon matSuffix>alternate_email</mat-icon>
+                        <mat-error>Please provide valid email !</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="password" required>
+                        <mat-icon matSuffix>lock</mat-icon>
+                        <mat-error>This fieled is required</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="form__actions">
+                <button type="submit" [disabled]='!registerForm.valid' mat-raised-button color="primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>

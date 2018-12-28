@@ -24,3 +24,25 @@ body {
 .main {
     min-height: calc(100vh - 64px + 64px);
 }
+
+
+/********************* 
+    Forms
+*********************/
+
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form .mat-form-field {
+    width: 100%;
+}
+
+.form .form__actions {
+    margin-top: 20px;
+}
+
+.form .form__controls {
+    margin-bottom: 20px;
+}

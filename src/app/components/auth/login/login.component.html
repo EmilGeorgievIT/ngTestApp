@@ -1,6 +1,6 @@
 <section class="section-login">
     <div class="section__body">
-        <form class="form-login" [formGroup]='loginForm'>
+        <form class="form" [formGroup]='loginForm' (ngSubmit)="formValue()">
             <div class="form__head">
                 <h3>
                     Login
@@ -11,24 +11,24 @@
                 <div class="form__controls">
                     <mat-form-field appearance="legacy">
                         <mat-label>Email</mat-label>
-                        <input type="email" matInput formControlName="email">
+                        <input type="email" matInput formControlName="email" required>
                         <mat-icon matSuffix>alternate_email</mat-icon>
-                        <mat-hint>Hint</mat-hint>
+                        <mat-error>Please provide valid email !</mat-error>
                     </mat-form-field>
                 </div>
 
                 <div class="form__controls">
                     <mat-form-field appearance="legacy">
                         <mat-label>Password</mat-label>
-                        <input type="password" matInput formControlName="email">
+                        <input type="password" matInput formControlName="password" required>
                         <mat-icon matSuffix>lock</mat-icon>
-                        <mat-hint>Hint</mat-hint>
+                        <mat-error>This fieled is required</mat-error>
                     </mat-form-field>
                 </div>
             </div>
 
             <div class="form__actions">
-                <button type="submit" mat-raised-button color="primary">Submit</button>
+                <button type="submit" [disabled]='!loginForm.valid' mat-raised-button color="primary">Submit</button>
             </div>
         </form>
     </div>

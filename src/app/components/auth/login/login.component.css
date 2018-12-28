@@ -1,20 +1,7 @@
 /********************* 
-    Form Login
+    Section Login
 *********************/
 
-.form-login {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.form-login .mat-form-field {
-    width: 100%;
-}
-
-.form-login .form__actions {
-    margin-top: 20px;
-}
-
-.form-login .form__controls {
-    margin-bottom: 20px;
+.section-login {
+    margin-top: 50px;
 }
