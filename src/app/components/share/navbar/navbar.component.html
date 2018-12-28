@@ -3,17 +3,22 @@
         <mat-toolbar>Menu</mat-toolbar>
         <mat-nav-list>
             <a mat-list-item routerLink="/">Home</a>
-            <a mat-list-item routerLink="/login" *ngIf="authService.isIiLogged()">Login</a>
-            <a mat-list-item routerLink="/register" *ngIf="authService.isIiLogged()">Register</a>
+            <a mat-list-item routerLink="/login" *ngIf="!authService.isLogged()">Login</a>
+            <a mat-list-item routerLink="/register" *ngIf="!authService.isLogged()">Register</a>
+            <div class="list-item" *ngIf="authService.isLogged()">
+                <a mat-list-item (click)='logOut()'>Logout</a>
+            </div>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar color="primary">
-            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="hideMenu()">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            <button type="button " aria-label="Toggle sidenav " mat-icon-button (click)="hideMenu() ">
+        <mat-icon aria-label="Side nav toggle icon ">menu</mat-icon>
       </button>
             <span>authApp</span>
         </mat-toolbar>
         <!-- Add Content Here -->
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+{{ authService.isLogged()}}

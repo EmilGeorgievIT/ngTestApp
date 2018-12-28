@@ -33,8 +33,10 @@ export class AuthService {
         this.toastr.success('Signed in', 'Success', {
           timeOut: 2000
         });
-        firebase.auth().currentUser.getIdToken();
-        this.token = firebase.auth().currentUser.getIdToken();
+        firebase.auth().currentUser
+        .getIdToken().then(token => {
+          this.token = token;
+        });
         this.router.navigate(['/']);
        }).catch(error => {
         this.toastr.error(error.message, 'Warning', {
@@ -42,7 +44,16 @@ export class AuthService {
         });
        })
     }
-    isIiLogged() {
+    signOut() {
+      firebase.auth().signOut()
+      .then(data => {
+        this.router.navigate(['/']);
+        this.token = null;
+      }).catch(error => {
+        console.log(error);
+      })
+    }
+    isLogged(): boolean {
       return this.token != null;
     }
 }

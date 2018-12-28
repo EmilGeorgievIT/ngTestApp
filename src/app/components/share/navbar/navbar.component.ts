@@ -28,7 +28,10 @@ export class NavbarComponent implements OnInit {
       this.drawer.close();
     }, 3000);
   }
-
+  logOut() {
+    console.log('work');
+    this.authService.signOut();
+  }
 
   ngOnInit() {
   }
