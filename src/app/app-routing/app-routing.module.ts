@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'cars', loadChildren: '../components/cars/cars.routing#CarsRoutingModule' },
+  { path: 'cars', loadChildren: '../components/cars/cars.routing#CarsRoutingModule', canActivate: [AuthGuard] },
   { path: '**', component: PagenotfoundComponent }
 ];
 

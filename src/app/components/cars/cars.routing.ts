@@ -8,12 +8,11 @@ import { CarsCreateComponent } from './cars-create/cars-create.component';
 import { CarsDetailsComponent } from './cars-details/cars-details.component';
 
 const carsRoutes: Routes = [
-  { path: '', component: CarsComponent },
+  { path: 'cars', component: CarsComponent },
   { path: 'create', component: CarsCreateComponent },
-  { path: 'delete', component: CarsDeleteComponent },
+  { path: 'delete/:id', component: CarsDeleteComponent },
   { path: 'details/:id', component: CarsDetailsComponent },
-  { path: 'edit', component: CarsEditComponent },
-
+  { path: 'edit/:id', component: CarsEditComponent },
 ];
 
 @NgModule({

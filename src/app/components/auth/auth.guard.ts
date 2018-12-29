@@ -15,11 +15,11 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     return this.chechLogin();
   }
-  chechLogin () {
+  chechLogin(): boolean {
     if (this.authService.isLogged()) {
       return true;
     }
-    this.router.navigate(['/register']);
+    this.router.navigate(['/login']);
     return false;
   }
 }

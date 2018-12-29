@@ -46,3 +46,21 @@ body {
 .form .form__controls {
     margin-bottom: 20px;
 }
+
+
+/********************* 
+    Cols
+*********************/
+
+.cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -15px;
+}
+
+.col {
+    max-width: 33%;
+    flex: 0 1 33%;
+    padding: 0 15px;
+}
