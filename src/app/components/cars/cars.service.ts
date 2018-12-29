@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CarsListModel } from './cars-list.model';
+import { CarsCreateModel } from './cars-create';
 
 
 @Injectable({
@@ -28,11 +29,24 @@ export class CarsService {
           res[i].year,
           res[i].manufacturer,
           res[i].transition,
+          res[i].color,
           res[i].description,
           res[i].imagePath
         ));
       }
       return carsList;
     }));
+  }
+  createCar(body: CarsCreateModel) {
+    return this.http.post(`${this.url}.json`, body);
+  }
+  getCarById(carId: string) {
+    return this.http.get<CarsListModel>(`${this.url}${carId}/.json`);
+  }
+  editCar(body: CarsListModel) {
+    return this.http.patch(`${this.url}.json`, body);
+  }
+  deleteCar(carId: string) {
+    return this.http.delete(`${this.url}${carId}/.json`);
   }
 }

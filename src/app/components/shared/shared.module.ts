@@ -12,11 +12,13 @@ import { AuthService } from '../auth/auth.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { CarsModule } from '../cars/cars.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    CarsModule,
     RouterModule,
     ToastrModule.forRoot(),
     HttpClientModule,
@@ -37,7 +39,6 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    ReactiveFormsModule
   ],
   providers: [AuthService]
 })

@@ -6,10 +6,9 @@
             <a mat-list-item routerLink="/login" *ngIf="!authService.isLogged()">Login</a>
             <a mat-list-item routerLink="/register" *ngIf="!authService.isLogged()">Register</a>
             <a mat-list-item routerLink="/cars" *ngIf="authService.isLogged()">Cars</a>
-            <a mat-list-item routerLink="/cars/edit" *ngIf="authService.isLogged()">Edit</a>
-            <a mat-list-item routerLink="/cars/create" *ngIf="authService.isLogged()">Create</a>
-            <a mat-list-item routerLink="/cars/delete" *ngIf="authService.isLogged()">Delete</a>
-
+            <a mat-list-item routerLink="/edit" *ngIf="authService.isLogged()">Edit</a>
+            <a mat-list-item routerLink="/create" *ngIf="authService.isLogged()">Create</a>
+            <a mat-list-item routerLink="/delete" *ngIf="authService.isLogged()">Delete</a>
 
             <div class="list-item" *ngIf="authService.isLogged()">
                 <a mat-list-item (click)='logOut()'>Logout</a>

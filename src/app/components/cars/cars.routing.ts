@@ -22,11 +22,6 @@ const carsRoutes: Routes = [
     RouterModule.forChild(carsRoutes)
   ],
   declarations: [
-    CarsComponent,
-    CarsCreateComponent,
-    CarsDeleteComponent,
-    CarsEditComponent,
-    CarsDetailsComponent
   ],
   exports: [
     RouterModule

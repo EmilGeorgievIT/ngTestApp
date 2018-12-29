@@ -1,3 +1,98 @@
-<p>
-  cars-edit works!
-</p>
+<section class="section-edit">
+    <div class="section__body">
+        <form class="form" #edit="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form__head">
+                <h3>
+                    Create Car
+                </h3>
+            </div>
+
+            <div class="form__body">
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Model</mat-label>
+                        <input type="text" matInput [(ngModel)]="carsModel.model" name='model' required>
+                        <mat-icon matSuffix>view_module</mat-icon>
+                        <mat-error>This field is required !</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Fuel</mat-label>
+                        <input type="text" matInput [(ngModel)]="carsModel.fuel" name='fuel' required>
+                        <mat-icon matSuffix>airport_shuttle</mat-icon>
+                        <mat-error>This field is required !</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Color</mat-label>
+                        <input type="text" matInput [(ngModel)]="carsModel.color" name='color' required>
+                        <mat-icon matSuffix>color_lens</mat-icon>
+                        <mat-error>This field is required !</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Engine</mat-label>
+                        <input type="text" matInput [(ngModel)]="carsModel.engine" name='engine' required>
+                        <mat-icon matSuffix>directions_car</mat-icon>
+                        <mat-error>This field is required !</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Image</mat-label>
+                        <input type="text" matInput [(ngModel)]="carsModel.image" name='image' required>
+                        <mat-icon matSuffix>add_a_photo</mat-icon>
+                        <mat-error>This field is required !</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Manufacturer</mat-label>
+                        <input type="text" matInput [(ngModel)]="carsModel.manufacturer" name='manufacturer' required>
+                        <mat-icon matSuffix>edit_location</mat-icon>
+                        <mat-error>This field is required !</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Transmition</mat-label>
+                        <input type="text" matInput [(ngModel)]="carsModel.transmition" name='transmition' required>
+                        <mat-icon matSuffix>shutter_speed</mat-icon>
+                        <mat-error>This field is required !</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form__controls">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Year</mat-label>
+                        <input type="text" matInput [(ngModel)]="carsModel.year" name='year' required>
+                        <mat-icon matSuffix>av_timer</mat-icon>
+                        <mat-error>This field is required !</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form__controls">
+                    <mat-form-field class="example-full-width">
+                        <textarea matInput [(ngModel)]="carsModel.description" name="description" placeholder="Add desctiption on car"></textarea>
+
+                        <mat-icon matSuffix>description</mat-icon>
+                    </mat-form-field>
+                </div>
+
+
+                <div class="form__actions">
+                    <button type="submit" [disabled]="create.invalid" mat-raised-button color="primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
