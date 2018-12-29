@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CarsService } from '../cars.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CarsListModel } from '../cars-list.model';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cars-details',
@@ -14,8 +15,18 @@ export class CarsDetailsComponent implements OnInit {
   car: CarsListModel;
   constructor(
     public carsService: CarsService,
-    public router: ActivatedRoute) { }
+    public router: ActivatedRoute,
+    public routers: Router,
+    public toastr: ToastrService
+    ) { }
 
+  deleteCar() {
+    this.carsService
+    .deleteCar(this.id).subscribe((data) => {
+      this.toastr.success('Deleted car', 'Success');
+      this.routers.navigate(['/cars']);
+    });
+  }
   ngOnInit() {
     this.id = this.router.snapshot.params['id'];
     this.carsService

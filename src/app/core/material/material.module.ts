@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatInputModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import  {MatListModule } from '@angular/material/list';
+import { MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import  {MatListModule } from '@angular/material/list';
     MatCardModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatDividerModule
   ],
   declarations: [],
   exports: [
@@ -28,7 +28,7 @@ import  {MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatListModule
+    MatDividerModule
   ]
 })
 export class MaterialModule { }

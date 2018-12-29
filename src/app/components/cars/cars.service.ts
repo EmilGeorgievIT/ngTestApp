@@ -47,6 +47,6 @@ export class CarsService {
     return this.http.patch(`${this.url}.json`, body);
   }
   deleteCar(carId: string) {
-    return this.http.delete(`${this.url}${carId}/.json`);
+    return this.http.delete(`${this.url}/${carId}/.json`);
   }
 }

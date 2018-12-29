@@ -23,17 +23,12 @@
                                     </div>
                                     <mat-card-content>
                                         <mat-list role="list">
-                                            <mat-list-item role="listitem">Item 1</mat-list-item>
-                                            <mat-list-item role="listitem">Item 2</mat-list-item>
-                                            <mat-list-item role="listitem">Item 3</mat-list-item>
+                                            <mat-list-item role="listitem">Desctiption {{ car.description}}</mat-list-item>
+                                            <mat-divider></mat-divider>
+                                            <mat-list-item role="listitem">Color: {{car.color}}</mat-list-item>
+                                            <mat-divider></mat-divider>
+                                            <mat-list-item role="listitem">Engine: {{car.engine}}</mat-list-item>
                                         </mat-list>
-
-                                        <p>
-                                            Description {{ car.description }}
-                                        </p>
-                                        <p>
-                                            Color: {{ car.color }}
-                                        </p>
                                     </mat-card-content>
                                 </mat-card>
                             </a>

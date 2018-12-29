@@ -10,7 +10,7 @@ import { CarsDetailsComponent } from './cars-details/cars-details.component';
 const carsRoutes: Routes = [
   { path: 'cars', component: CarsComponent },
   { path: 'create', component: CarsCreateComponent },
-  { path: 'delete/:id', component: CarsDeleteComponent },
+  { path: 'cars/delete/:id', component: CarsDeleteComponent },
   { path: 'cars/details/:id', component: CarsDetailsComponent },
   { path: 'edit/:id', component: CarsEditComponent },
 ];
