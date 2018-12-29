@@ -11,7 +11,7 @@ const carsRoutes: Routes = [
   { path: 'cars', component: CarsComponent },
   { path: 'create', component: CarsCreateComponent },
   { path: 'delete/:id', component: CarsDeleteComponent },
-  { path: 'details/:id', component: CarsDetailsComponent },
+  { path: 'cars/details/:id', component: CarsDetailsComponent },
   { path: 'edit/:id', component: CarsEditComponent },
 ];
 

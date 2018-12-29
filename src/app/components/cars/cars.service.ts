@@ -41,7 +41,7 @@ export class CarsService {
     return this.http.post(`${this.url}.json`, body);
   }
   getCarById(carId: string) {
-    return this.http.get<CarsListModel>(`${this.url}${carId}/.json`);
+    return this.http.get<CarsListModel>(`${this.url}/${carId}/.json`);
   }
   editCar(body: CarsListModel) {
     return this.http.patch(`${this.url}.json`, body);
