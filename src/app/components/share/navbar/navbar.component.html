@@ -5,6 +5,7 @@
             <a mat-list-item routerLink="/">Home</a>
             <a mat-list-item routerLink="/login" *ngIf="!authService.isLogged()">Login</a>
             <a mat-list-item routerLink="/register" *ngIf="!authService.isLogged()">Register</a>
+            <a mat-list-item routerLink="/cars" *ngIf="authService.isLogged()">Cars</a>
             <div class="list-item" *ngIf="authService.isLogged()">
                 <a mat-list-item (click)='logOut()'>Logout</a>
             </div>
@@ -20,3 +21,5 @@
         <!-- Add Content Here -->
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+{{ authService.isLogged() }}

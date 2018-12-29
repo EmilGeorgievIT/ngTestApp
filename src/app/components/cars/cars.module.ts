@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarsComponent } from '../cars/cars/cars.component';
 import { CarComponent } from '../cars/car/car.component';
+import { CarsRoutingModule } from './cars.routing';
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    CarsRoutingModule
   ],
   declarations: [
     CarComponent,
