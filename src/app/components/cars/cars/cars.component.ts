@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CarsService } from '../cars.service';
+import { CarsListModel } from '../cars-list.model';
 
 @Component({
   selector: 'app-cars',
@@ -6,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent implements OnInit {
-
-  constructor() { }
-
+  allCars$: Observable<CarsListModel[]>;
+  constructor(public carsService: CarsService) { }
   ngOnInit() {
+    this.allCars$ = this.carsService
+    .getAllCars();
   }
 
 }

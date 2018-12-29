@@ -16,10 +16,6 @@ export class AuthService {
     firebase.auth()
       .createUserWithEmailAndPassword(email, password)
       .then(data => {
-        firebase.auth().currentUser
-        .getIdToken().then((token: string) => {
-          this.token = token;
-        });
         this.toastr.success('Registered', 'Success', {
           timeOut: 3000 });
         this.router.navigate(['/login']);
@@ -30,7 +26,7 @@ export class AuthService {
           timeOut: 3000 });
         });
     }
-    getToken(): string {
+    getToken() {
       return this.token;
     }
     login(email: string, password: string) {
@@ -38,6 +34,10 @@ export class AuthService {
       .then(data => {
         this.toastr.success('Signed in', 'Success', {
           timeOut: 2000
+        });
+        firebase.auth().currentUser
+        .getIdToken().then((token: string) => {
+          this.token = token;
         });
         this.router.navigate(['/']);
        }).catch(error => {
