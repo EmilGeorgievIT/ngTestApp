@@ -28,7 +28,6 @@ export class CarsCreateComponent implements OnInit {
        this.toastr.success('Cars created', 'Success');
        this.route.navigate(['/cars']);
      });
-      console.log(createCar.value);
    }
 
   ngOnInit() {
