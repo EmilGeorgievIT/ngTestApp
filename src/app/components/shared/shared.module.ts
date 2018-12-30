@@ -13,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CarsModule } from '../cars/cars.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { CarsModule } from '../cars/cars.module';
     CommonModule,
     CarsModule,
     RouterModule,
+    FlexLayoutModule,
     ToastrModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,

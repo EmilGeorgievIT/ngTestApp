@@ -6,9 +6,9 @@ import { SharedModule } from '../app/components/shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './core/interseptors/token.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +20,6 @@ import { TokenInterceptor } from './core/interseptors/token.interceptor';
     AppRoutingModule,
     RouterModule,
     BrowserAnimationsModule,
-    LayoutModule,
   ],
   providers: [
     {
