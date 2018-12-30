@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CarsService } from '../cars.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CarsCreateModel } from '../cars-create';
+import { CarsListModel } from '../cars-list.model';
 
 @Component({
   selector: 'app-cars-edit',
@@ -10,16 +11,33 @@ import { CarsCreateModel } from '../cars-create';
   styleUrls: ['./cars-edit.component.css']
 })
 export class CarsEditComponent implements OnInit {
-  editCar: CarsCreateModel;
+  car: CarsListModel;
+  id: string;
   constructor(
     public carsService: CarsService,
     public router: Router,
+    public activeRouter: ActivatedRoute,
     public toastr: ToastrService
     ) { }
-    onSubmit() {
-    }
-  ngOnInit() {
 
+  editCars() {
+    const body = {
+      [this.id] : this.car
+    };
+    this.carsService.editCar(body)
+    .subscribe((data) => {
+      this.toastr.success('Successful edit car', 'Success');
+      this.router.navigate(['/cars']);
+    }, (error) => {
+      this.toastr.error(error, 'Warning');
+    });
+  }
+  ngOnInit() {
+    this.id = this.activeRouter.snapshot.params['id'];
+    this.carsService.getCarById(this.id)
+    .subscribe((data) => {
+      this.car = data;
+    });
   }
 
 }
