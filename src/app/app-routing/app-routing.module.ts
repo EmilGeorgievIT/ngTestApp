@@ -8,7 +8,7 @@ import { RegisterComponent } from '../components/auth/register/register.componen
 import { AuthGuard } from '../components/auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'cars', loadChildren: '../components/cars/cars.routing#CarsRoutingModule', canActivate: [AuthGuard] },

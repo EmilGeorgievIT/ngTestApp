@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
+import { UserInfo } from 'firebase';
 
 @Component({
   selector: 'app-home',
@@ -7,14 +8,14 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  userData: UserInfo;
   constructor(private authService: AuthService) { }
-  logged: boolean;
-  token: any;
-
+  // showData(): UserInfo {
+  // }
   ngOnInit() {
-    this.token = this.authService.getToken();
-    this.logged = this.authService.isLogged();
+    if (this.authService.isLogged()) {
+      this.userData = this.authService.getUser();
+    }
   }
 
 }

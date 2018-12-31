@@ -2,12 +2,15 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { UserInfo } from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   token: string;
+  userData: UserInfo;
   constructor(
     private toastr: ToastrService,
     private router: Router
@@ -28,6 +31,14 @@ export class AuthService {
     }
     getToken() {
       return this.token;
+    }
+    getUser(): UserInfo {
+      if (this.token != null) {
+        firebase.auth().currentUser.providerData.map((data) => {
+          this.userData = data;
+        });
+        return this.userData;
+      }
     }
     login(email: string, password: string) {
       firebase.auth().signInWithEmailAndPassword(email, password)

@@ -1,0 +1,9 @@
+.section-home {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.section-home .section__head {
+    padding: 20px 0;
+    box-shadow: 0 2px 1px #000
+}
