@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Live Demo
 
-`https://ng-recipe-b718c.firebaseapp.com/`
+[app-test](https://ng-recipe-b718c.firebaseapp.com/)
 
 ## Development server
 
